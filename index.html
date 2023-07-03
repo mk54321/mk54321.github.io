@@ -1,97 +1,83 @@
 <html>
 <head>
-    <style>
-        h1 {
-            color: lightblue;
-            font-weight: bold;
-            text-align: center;
-        }
-        hr {
-            border: 3px solid lightblue;
-        }
-        p {
-            color: lightblue;
-            text-align: center;
-        }
-        input, select {
-            margin-left: 10px;
-        }
-        button {
-            background-color: lightblue;
-            opacity: 0.8;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
+<style>
+h1 {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+hr {
+  border: 2px solid white;
+}
+
+p {
+  color: white;
+  text-align: center;
+}
+
+input {
+  color: black;
+}
+
+select {
+  color: black;
+  background-color: white;
+}
+
+button {
+  color: white;
+  background-color: lightblue;
+  opacity: 0.9;
+  border:none;
+  padding: 15px;
+  font-size: large;
+}
+
+body {
+  background-image: linear-gradient(to bottom, rgba(135,206,235), rgba(255,255,255));
+}
+
+label {
+  display: inline-block;
+  width: 200px;
+}
+</style>
 </head>
 <body>
-    <h1>呼吸道肿瘤预测测试</h1>
-    <hr>
-    <p>请输入您的姓名<input type="text" name="name"></p >
-    <p>请输入您的年龄<input type="number" name="age"></p >
-    <p>请输入您的性别<select name="gender">
-        <option value="" selected hidden></option>
-        <option value="男">男</option>
-        <option value="女">女</option>
-    </select></p >
-    <p>咳嗽情况调查<select name="cough">
-        <option value="" selected hidden></option>
-        <option value="有咳嗽">有咳嗽</option>
-        <option value="无咳嗽">无咳嗽</option>
-        <option value="有无咳嗽">有无咳嗽</option>
-    </select></p >
-    <!-- 添加12行的居中“咳嗽情况调查”，下拉框，可选择“有咳嗽”，“无咳嗽”，“有无咳嗽”，在未选择时不显示内容 -->
-    <p>咳痰情况调查<select name="sputum">
-        <option value="" selected hidden></option>
-        <option value="有咳痰">有咳痰</option>
-        <option value="无咳痰">无咳痰</option>
-        <option value="有无咳痰">有无咳痰</option>
-    </select></p >
-    <p>胸闷情况调查<select name="chest_tightness">
-        <option value="" selected hidden></option>
-        <option value="有胸闷">有胸闷</option>
-        <option value="无胸闷">无胸闷</option>
-        <option value="有无胸闷">有无胸闷</option>
-    </select></p >
-    <p>气促情况调查<select name="dyspnea">
-        <option value="" selected hidden></option>
-        <option value="有气促">有气促</option>
-        <option value="无气促">无气促</option>
-        <option value="有无气促">有无气促</option>
-    </select></p >
-    <p>发热情况调查<select name="fever">
-        <option value="" selected hidden></option>
-        <option value="有发热">有发热</option>
-        <option value="无发热">无发热</option>
-        <option value="有无发热">有无发热</option>
-    </select></p >
-    <p>吸烟史调查<select name="smoking_history">
-        <option value="" selected hidden></option>
-        <option value="有吸烟史">有吸烟史</option>
-        <option value="无吸烟史">无吸烟史</option>
-        <option value="不确定">不确定</option>
-    </select></p >
-    <p>家族肿瘤史调查<select name="family_tumor_history">
-        <option value="" selected hidden></option>
-        <option value="有家族肿瘤史">有家族肿瘤史</option>
-        <option value="无家族肿瘤史">无家族肿瘤史</option>
-        <option value="不确定">不确定</option>
-    </select></p >
-    <p>职业暴露史调查<select name="occupational_exposure_history">
-        <option value="" selected hidden></option>
-        <option value="有职业暴露史">有职业暴露史</option>
-        <option value="无职业暴露史">无职业暴露史</option>
-        <option value="不确定">不确定</option>
-    </select></p >
-    <p>接触过敏源调查<select name="allergen_exposure">
-        <option value="" selected hidden></option>
-        <option value="有接触过敏源">有接触过敏源</option>
-        <option value="无接触过敏源">无接触过敏源</option>
-        <option value="不确定">不确定</option>
-    </select></p >
-    <button onclick="window.location.href='https://www.example.com'">提交</button>
+<h1>呼吸道肿瘤预测测试</h1>
+<hr>
+<p><label for="id">请输入您的身份证号：</label><input type="text" id="id" required></p >
+<p><label for="age">请输入您的年龄：</label><input type="number" id="age" required></p >
+<p><label for="gender">请输入您的性别：</label><select id="gender" required><option value=""></option><option value="男">男</option><option value="女">女</option></select></p >
+<p><label for="cough">咳嗽情况调查：</label><select id="cough" required><option value=""></option><option value="有咳嗽">有咳嗽</option><option value="无咳嗽">无咳嗽</option><option value="有无咳嗽">有无咳嗽</option></select></p >
+<p><label for="sputum">痰液情况调查：</label><select id="sputum" required><option value=""></option><option value="有痰液">有痰液</option><option value="无痰液">无痰液</option><option value="有无痰液">有无痰液</option></select></p >
+<p><label for="blood">血液情况调查：</label><select id="blood" required><option value=""></option><option value="有血液">有血液</option><option value="无血液">无血液</option><option value="有无血液">有无血液</option></select></p >
+<p><label for="dyspnea">呼吸困难情况调查：</label><select id="dyspnea" required><option value=""></option><option value="有呼吸困难">有呼吸困难</option><option value="无呼吸困难">无呼吸困难</option><option value="有无呼吸困难">有无呼吸困难</option></select></p >
+<p><label for="chestpain">胸痛情况调查：</label><select id="chestpain" required><option value=""></option><option value="有胸痛">有胸痛</option><option value="无胸痛">无胸痛</option><option value="有无胸痛">有无胸痛</option></select></p >
+<p><label for="fever">发热情况调查：</label><select id="fever" required><option value=""></option><option value="有发热">有发热</option><option value="无发热">无发热</option><option value="有无发热">有无发热</option></select></p >
+<p><label for="weight">体重变化情况调查：</label><select id="weight" required><option value=""></option><option value="体重增加">体重增加</option><option value="体重减少">体重减少</option><option value="体重不变">体重不变</option></select></p >
+<p><label for="smoking">吸烟史情况调查：</label><select id="smoking" required><option value=""></option><option value="有吸烟史">有吸烟史</option><option value="无吸烟史">无吸烟史</option></select></p >
+<p><button id="submit" onclick="check()" style="padding: 20px; font-size: 20px; background-color: skyblue; width: 200px;">提交</button></p >
+<script>
+function check() {
+  var id = document.getElementById("id").value;
+  var age = document.getElementById("age").value;
+  var gender = document.getElementById("gender").value;
+  var cough = document.getElementById("cough").value;
+  var sputum = document.getElementById("sputum").value;
+  var blood = document.getElementById("blood").value;
+  var dyspnea = document.getElementById("dyspnea").value;
+  var chestpain = document.getElementById("chestpain").value;
+  var fever = document.getElementById("fever").value;
+  var weight = document.getElementById("weight").value;
+  var smoking = document.getElementById("smoking").value;
+  if (id == "" || age == "" || gender == "" || cough == "" || sputum == "" || blood == "" || dyspnea == "" || chestpain == "" || fever == "" || weight == "" || smoking == "") {
+    alert("请完成所有内容");
+  } else {
+    window.location.href = "给定好的超链接页面";
+  }
+}
+</script>
 </body>
 </html>
