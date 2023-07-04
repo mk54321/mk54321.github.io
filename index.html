@@ -37,7 +37,7 @@ button {
 body {
   background-image: linear-gradient(to bottom, rgba(135,206,235), rgba(255,255,255));
 }
-
+<option value="有血液">有血液</option>
 label {
   display: inline-block;
   width: 200px;
@@ -47,37 +47,24 @@ label {
 <body>
 <h1>呼吸道肿瘤预测测试</h1>
 <hr>
-<p><label for="id">请输入您的身份证号：</label><input type="text" id="id" required></p >
-<p><label for="age">请输入您的年龄：</label><input type="number" id="age" required></p >
-<p><label for="gender">请输入您的性别：</label><select id="gender" required><option value=""></option><option value="男">男</option><option value="女">女</option></select></p >
-<p><label for="cough">咳嗽情况调查：</label><select id="cough" required><option value=""></option><option value="有咳嗽">有咳嗽</option><option value="无咳嗽">无咳嗽</option><option value="有无咳嗽">有无咳嗽</option></select></p >
-<p><label for="sputum">痰液情况调查：</label><select id="sputum" required><option value=""></option><option value="有痰液">有痰液</option><option value="无痰液">无痰液</option><option value="有无痰液">有无痰液</option></select></p >
-<p><label for="blood">血液情况调查：</label><select id="blood" required><option value=""></option><option value="有血液">有血液</option><option value="无血液">无血液</option><option value="有无血液">有无血液</option></select></p >
-<p><label for="dyspnea">呼吸困难情况调查：</label><select id="dyspnea" required><option value=""></option><option value="有呼吸困难">有呼吸困难</option><option value="无呼吸困难">无呼吸困难</option><option value="有无呼吸困难">有无呼吸困难</option></select></p >
-<p><label for="chestpain">胸痛情况调查：</label><select id="chestpain" required><option value=""></option><option value="有胸痛">有胸痛</option><option value="无胸痛">无胸痛</option><option value="有无胸痛">有无胸痛</option></select></p >
-<p><label for="fever">发热情况调查：</label><select id="fever" required><option value=""></option><option value="有发热">有发热</option><option value="无发热">无发热</option><option value="有无发热">有无发热</option></select></p >
-<p><label for="weight">体重变化情况调查：</label><select id="weight" required><option value=""></option><option value="体重增加">体重增加</option><option value="体重减少">体重减少</option><option value="体重不变">体重不变</option></select></p >
-<p><label for="smoking">吸烟史情况调查：</label><select id="smoking" required><option value=""></option><option value="有吸烟史">有吸烟史</option><option value="无吸烟史">无吸烟史</option></select></p >
-<p><button id="submit" onclick="check()" style="padding: 20px; font-size: 20px; background-color: skyblue; width: 200px;">提交</button></p >
-<script>
-function check() {
-  var id = document.getElementById("id").value;
-  var age = document.getElementById("age").value;
-  var gender = document.getElementById("gender").value;
-  var cough = document.getElementById("cough").value;
-  var sputum = document.getElementById("sputum").value;
-  var blood = document.getElementById("blood").value;
-  var dyspnea = document.getElementById("dyspnea").value;
-  var chestpain = document.getElementById("chestpain").value;
-  var fever = document.getElementById("fever").value;
-  var weight = document.getElementById("weight").value;
-  var smoking = document.getElementById("smoking").value;
-  if (id == "" || age == "" || gender == "" || cough == "" || sputum == "" || blood == "" || dyspnea == "" || chestpain == "" || fever == "" || weight == "" || smoking == "") {
-    alert("请完成所有内容");
-  } else {
-    window.location.href = "给定好的超链接页面";
-  }
-}
-</script>
+<form action="process_data.py" method="post">
+<p><label for="age">请输入您的年龄：</label><input type="number" id="age" name="age" required></p >
+<p><label for="gender">请输入您的性别：</label><select id="gender" name="gender" required><option value=""></option><option value="男">男</option><option value="女">女</option></select></p >
+<p><label for="cough">咳嗽情况调查：</label><select id="cough" name="cough" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="无痰或少痰的阵发性刺激性干咳">无痰或少痰的阵发性刺激性干咳</option><option value="持续高调金属音样咳嗽或呛咳">持续高调金属音样咳嗽或呛咳</option></select></p >
+<p><label for="phlegm">痰液情况调查：</label><select id="phlegm" name="phlegm" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="血丝痰">血丝痰</option><option value="咳血痰">咳血痰</option><option value="咳黄浓痰">咳黄浓痰</option></select></p >
+<p><label for="fever">发热情况调查：</label><select id="fever" name="fever" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="低热">低热</option><option value="高热（38.5℃以上）">高热（38.5℃以上）</option></select></p >
+<p><label for="dyspnea">呼吸困难情况调查：</label><select id="dyspnea" name="dyspnea" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="偶发呼吸困难">偶发呼吸困难</option><option value="频发呼吸困难">频发呼吸困难</option></select></p >
+<p><label for="chestpain">胸痛情况调查：</label><select id="chestpain" name="chestpain" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="胸部不规则隐痛或钝痛">胸部不规则隐痛或钝痛</option><option value="肩、胸背部持续性疼痛">肩、胸背部持续性疼痛</option></select></p >
+<p><label for="voice">声音嘶哑情况调查：</label><select id="voice" name="voice" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="突然发生、进展迅速">突然发生、进展迅速</option><option value="休息和常规治疗没有效果">休息和常规治疗没有效果</option></select></p >
+<p><label for="headache">头痛情况调查：</label><select id="headache" name="headache" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="偏头痛">偏头痛</option><option value="颈项部头痛">颈项部头痛</option><option value="颅顶枕部疼痛">颅顶枕部疼痛</option><option value="间歇性发作">间歇性发作</option><option value="持续性头痛">持续性头痛</option></select></p >
+<p><label for="snot">鼻涕情况调查：</label><select id="snot" name="snot" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="涕中带血">涕中带血</option><option value="回吸性血涕">回吸性血涕</option></select></p >
+<p><label for="tinnitus">耳鸣情况调查：</label><select id="tinnitus" name="tinnitus" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="间接性单侧耳鸣">间接性单侧耳鸣</option><option value="持续性单侧耳鸣">持续性单侧耳鸣</option></select></p >
+<p><label for="face">面部麻木、复视情况调查：</label><select id="face" name="face" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="面部有蚁行感、咀嚼困难">面部有蚁行感、咀嚼困难</option><option value="重影">重影</option></select></p >
+<p><label for="dysphagia">吞咽困难情况调查：</label><select id="dysphagia" name="dysphagia" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="吞咽疼痛">吞咽疼痛</option><option value="吞咽疼痛加剧并向耳部放射">吞咽疼痛加剧并向耳部放射</option></select></p >
+<p><label for="Laryngeal">喉部不适情况调查：</label><select id="Laryngeal" name="Laryngeal" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="喉咙有异物感">喉咙有异物感</option><option value="喉咙疼痛">喉咙疼痛</option></select></p >
+<p><button id="submit" style="padding: 20px; font-size: 20px; background-color: skyblue; width: 200px;">提交</button></p >
+
+
+</form>
 </body>
 </html>
