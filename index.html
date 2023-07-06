@@ -6,88 +6,82 @@ h1 {
   font-weight: bold;
   text-align: center;
 }
-
 hr {
-  border: 2px solid white;
+border: 2px solid white;
 }
 
 p {
-  color: black;
-  text-align: center;
+color: black;
+text-align: center;
 }
 table {
-  margin: auto; /* center the table */
-  border-collapse: collapse; /* remove the gaps between cells */
+margin: auto; /* center the table /
+border-collapse: collapse; / remove the gaps between cells */
 }
 
 td {
-  padding: 10px; /* add some space around the cells */
+padding: 10px; /* add some space around the cells */
 }
 
 input {
-  color: black;
+color: black;
 }
 
 select {
-  color: black;
-  background-color: white;
+color: black;
+background-color: white;
 }
 
 button {
-  color: white;
-  background-color: lightblue;
-  opacity: 0.9;
-  border:none;
-  padding: 15px;
-  font-size: large;
+color: white;
+background-color: lightblue;
+opacity: 0.9;
+border:none;
+padding: 15px;
+font-size: large;
 }
 
 body {
-  background-image: linear-gradient(to bottom, rgba(135,206,235), rgba(255,255,255));
-}
-<option value="有血液">有血液</option>
-label {
-  display: inline-block;
-  width: 200px;
+background-image: linear-gradient(to bottom, rgba(135,206,235), rgba(255,255,255));
 }
 </style>
+
 </head>
 <body>
-<h1>呼吸道肿瘤预测测试</h1>
+<h1>肿瘤预测测试</h1>
 <hr>
-<form action="process_data.py" method="post">
+<form>
 <table>
 <tr><td>请输入您的年龄：</td><td><input type="number" id="age" name="age" required></td></tr >
-<tr><td>请输入您的BMI：</td><td><input type="number" id="bmi" name="bmi" required></td></tr >
+<tr><td>请输入您的BMI：</td><td><input type="number" id="BMI" name="BMI" required></td></tr >
 <tr><td>请输入您的性别：</td><td><select id="gender" name="gender" required><option value=""></option><option value="男">男</option><option value="女">女</option></select></td></tr >
 <tr><td>咳嗽情况调查：</td><td><select id="cough" name="cough" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="无痰或少痰的阵发性刺激性干咳">无痰或少痰的阵发性刺激性干咳</option><option value="持续高调金属音样咳嗽或呛咳">持续高调金属音样咳嗽或呛咳</option></select></td></tr >
 <tr><td>痰液情况调查：</td><td><select id="phlegm" name="phlegm" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="血丝痰">血丝痰</option><option value="咳血痰">咳血痰</option><option value="咳黄浓痰">咳黄浓痰</option></select></td></tr >
-<tr><td>发热情况调查：</td><td><select id="fever" name="fever" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="低热">低热</option><option value="高热（38.5℃以上）">高热（38.5℃以上）</option></select></td></tr >
-<tr><td>呼吸困难情况调查：</td><td><select id="dyspnea" name="dyspnea" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="偶发呼吸困难">偶发呼吸困难</option><option value="频发呼吸困难">频发呼吸困难</option></select></td></tr >
+<tr><td>发热情况调查：</td><td><select id="fever" name="fever" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="低热">低热</option><option value="高热（38.5℃以上）">高热（38.5℃以上）</option></select></td></<tr><td>呼吸困难情况调查：</td><td><select id="dyspnea" name="dyspnea" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="偶发呼吸困难">偶发呼吸困难</option><option value="频发呼吸困难">频发呼吸困难</option></select></td></tr >
 <tr><td>胸痛情况调查：</td><td><select id="chestpain" name="chestpain" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="胸部不规则隐痛或钝痛">胸部不规则隐痛或钝痛</option><option value="肩、胸背部持续性疼痛">肩、胸背部持续性疼痛</option></select></td></tr >
 <tr><td>声音嘶哑情况调查：</td><td><select id="voice" name="voice" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="突然发生、进展迅速">突然发生、进展迅速</option><option value="休息和常规治疗没有效果">休息和常规治疗没有效果</option></select></td></tr >
-<tr><td>头痛情况调查：</td><td>
-<select id="headache" name="headache" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="偏头痛">偏头痛</option><option value="颈项部头痛">颈项部头痛</option><option value="颅顶枕部疼痛">颅顶枕部疼痛</option><option value="间歇性发作">间歇性发作</option><option value="持续性头痛">持续性头痛</option></select></td></tr >
+<tr><td>头痛情况调查：</td><td><select id="headache" name="headache" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="偏头痛">偏头痛</option><option value="颈项部头痛">颈项部头痛</option><option value="颅顶枕部疼痛">颅顶枕部疼痛</option><option value="间歇性发作">间歇性发作</option><option value="持续性头痛">持续性头痛</option></select></td></tr >
 <tr><td>鼻涕情况调查：</td><td><select id="snot" name="snot" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="涕中带血">涕中带血</option><option value="回吸性血涕">回吸性血涕</option></select></td></tr >
 <tr><td>耳鸣情况调查：</td><td><select id="tinnitus" name="tinnitus" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="间接性单侧耳鸣">间接性单侧耳鸣</option><option value="持续性单侧耳鸣">持续性单侧耳鸣</option></select></td></tr >
-<tr><td>面部麻木、复视情况调查：</td><td>
-<select id="face" name="face" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="面部有蚁行感、咀嚼困难">面部有蚁行感、咀嚼困难</option><option value="重影">重影</option></select></td></tr >
-<tr><td>吞咽困难情况调查：</td><td>
-<select id="dysphagia" name="dysphagia" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="吞咽疼痛">吞咽疼痛</option><option value="吞咽疼痛加剧并向耳部放射">吞咽疼痛加剧并向耳部放射</option></select></td></tr >
-<tr><td>喉部不适情况调查：</td>
-<td>
-<select id="Laryngeal" name="Laryngeal" required>
-<option value=""></option>
-<option value="无明显症状">无明显症状</option>
-<option value="喉咙有异物感">喉咙有异物感</option>
-<option value="喉咙疼痛">喉咙疼痛</option>
-</select>
-</td>
-</tr >
-<tr><td colspan="2"><button id="submit" style="padding: 20px; font-size: 20px; background-color: skyblue; width: 200px;">提交</button></td></tr >
+<tr><td>面部麻木、复视情况调查：</td><td><select id="face" name="face" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="面部有蚁行感、咀嚼困难">面部有蚁行感、咀嚼困难</option><option value="重影">重影</option></select></td></tr >
+<tr><td>吞咽困难情况调查：</td><td><select id="dysphagia" name="dysphagia" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="吞咽疼痛">吞咽疼痛</option><option value="吞咽疼痛加剧并向耳部放射">吞咽疼痛加剧并向耳部放射</option></select></td></tr >
+<tr><td>排便情况调查：</td><td><select id="dysphagia" name="dysphagia" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="腹泻">腹泻</option><option value="便秘">便秘</option></select></td></tr >
+<tr><td>粪便情况调查：</td><td><select id="dysphagia" name="dysphagia" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="便中带血">便中带血</option><option value="便中带脓液">便中带脓液</option><option value="粘液便">粘液便</option></select></td></tr >
+<tr><td>腹部痛感调查：</td><td><select id="dysphagia" name="dysphagia" required><option value=""></option><option value="无明显症状">无明显症状</option><option value="持续性隐痛">持续性隐痛</option><option value="腹胀感">腹胀感</option><option value="阵发性绞痛">阵发性绞痛</option></select></td></tr >
 </table>
+<div style="text-align: center;">
+  <button id="submit" style="padding: 20px; font-size: 20px; background-color: skyblue;">提交</button>
+  <a href="#" id="result" style="display: none; padding: 20px; font-size: 20px; background-color: lightgreen; text-decoration: none; margin-left: 20px;">查看结果</a>
+</div>
+<script>
+document.getElementById("submit").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the form from submitting
+  document.getElementById("result").style.display = "inline";
+});
 
-
-</form>
+document.getElementById("result").addEventListener("click", function() {
+  window.location.href = "https://nondoc.github.io/";
+});
+</script>
 </body>
 </html>
